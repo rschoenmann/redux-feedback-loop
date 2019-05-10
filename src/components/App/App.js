@@ -5,6 +5,9 @@ import {HashRouter as Router, Route, Link} from 'react-router-dom';
 
 // Components
 import Feelings from '../Feelings/Feelings';
+import Understanding from '../Understanding/Understanding';
+import Supported from '../Supported/Supported';
+import Comments from '../Comments/Comments';
 import ReviewFeedback from '../ReviewFeedback/ReviewFeedback';
 
 class App extends Component {
@@ -16,6 +19,9 @@ class App extends Component {
           <h4><i>Don't forget it!</i></h4>
         </header>
         <Feelings />
+        <Understanding />
+        <Supported />
+        <Comments />
         <ReviewFeedback />
         <br/>
       </div>
