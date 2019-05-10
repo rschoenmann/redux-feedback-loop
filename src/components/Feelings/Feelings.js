@@ -14,7 +14,12 @@ class Feelings extends Component {
 			value: event.target.value
 		})
 		console.log('event.target.value', event.target.value);
-	}
+	}//end handleRatingChange
+
+	handleNext = (event) => {
+		//when next button is clicked, send the feelings data to the feedbackReducer
+		this.props.dispatch({type: 'ADD_FEELINGS', payload: event.target.value, name: 'feelings'});
+	}//end handleNext
 		
 
 
@@ -35,6 +40,7 @@ class Feelings extends Component {
 				/>
 				<br></br>
 				<Button 
+					onClick={this.handleNext}
 					disabled={!this.state.value}
 					variant="outlined" 
 					color="primary">Next</Button>
