@@ -11,7 +11,7 @@ class Feeling extends Component {
 		// 	value: event.target.value
 		// })
 		console.log('event.target.value', event.target.value);
-		if(event.target.value >= 0 && event.target.value <= 5){
+		if(event.target.value >= 1 && event.target.value <= 5){
 			// if a 0 above is entered, send feelings data to feedbackReducer
 			this.props.dispatch({ type: 'ADD_FEELING', payload: event.target.value, name: 'feeling' });
 		} else {

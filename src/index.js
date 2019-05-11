@@ -10,9 +10,9 @@ import {Provider} from 'react-redux';
 import logger from 'redux-logger';
 
 const feedback = {
-			feeling: '',
-			understanding: '',
-			supported: '',
+			feeling: 0,
+			understanding: 0,
+			supported: 0,
 			comments: ''
 		}	
 

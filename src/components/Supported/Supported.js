@@ -6,7 +6,7 @@ import ReviewFeedback from '../ReviewFeedback/ReviewFeedback';
 class Supported extends Component {
 
 	handleChange = (event) => {
-		if (event.target.value >= 0 && event.target.value <= 5) {
+		if (event.target.value >= 1 && event.target.value <= 5) {
 			// if a 0 above is entered, send supported data to feedbackReducer
 			this.props.dispatch({ type: 'ADD_SUPPORTED', payload: event.target.value, name: 'supported' });
 		} else {

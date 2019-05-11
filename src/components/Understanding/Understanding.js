@@ -6,7 +6,7 @@ import ReviewFeedback from '../ReviewFeedback/ReviewFeedback';
 class Understanding extends Component {
 
 	handleChange = (event) => {
-		if (event.target.value >= 0 && event.target.value <= 5) {
+		if (event.target.value >= 1 && event.target.value <= 5) {
 			// if a 0 above is entered, send understanding data to feedbackReducer
 			this.props.dispatch({ type: 'ADD_UNDERSTANDING', payload: event.target.value, name: 'understanding'});
 		} else {
