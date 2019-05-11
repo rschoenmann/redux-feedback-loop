@@ -4,17 +4,9 @@ import { Button, TextField } from '@material-ui/core';
 
 class Understanding extends Component {
 
-	state = {
-		value: ''
-	}
-
-	handleRatingChange = (event) => {
-		// next button is disabled unless there is something in the input field
-		this.setState({
-			value: event.target.value
-		})
-		console.log('event.target.value', event.target.value);
-	}
+	handleChange = (event) => {
+		this.props.dispatch({ type: 'ADD_UNDERSTANDING', payload: event.target.value, name: 'understanding' });
+	}//end handleChange
 
 
 
@@ -23,7 +15,7 @@ class Understanding extends Component {
 			<div>
 				<h2>How well are you understanding the concepts?</h2>
 				<TextField
-					onChange={this.handleRatingChange}
+					onChange={this.handleChange}
 					type="number"
 					id="outlined-number"
 					label="Please enter a number 1-5"
@@ -35,7 +27,6 @@ class Understanding extends Component {
 				/>
 				<br></br>
 				<Button
-					disabled={!this.state.value}
 					variant="outlined"
 					color="primary">Next</Button>
 			</div>
