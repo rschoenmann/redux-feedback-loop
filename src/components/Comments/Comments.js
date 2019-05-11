@@ -1,19 +1,57 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Button, TextField } from '@material-ui/core';
+import ReviewFeedback from '../ReviewFeedback/ReviewFeedback';
 
 class Comments extends Component {
+
+	state = {
+		isFilled: false
+	}
 
 	handleChange = (event) => {
 		//no real validation on comments handleChange, since it's an open text input and not a specific number requirement
 		//will just make sure something is entered onClick of 'submit feedback' button
 		this.props.dispatch({ type: 'ADD_COMMENTS', payload: event.target.value, name: 'comments' });
-	}//end handleChange
+		this.checkIfComplete();
+	};//end handleChange
+
+	checkIfComplete = () => {
+		if (!this.props.feedback.comments || !this.props.feedback.feeling || !this.props.feedback.understanding || !this.props.feedback.supported) {
+			this.setState({
+				isFilled: false
+			})
+		}
+		else {
+			this.setState({
+				isFilled: true
+			})
+
+		}
+		console.log('checkIfComplete', this.state.isFilled)
+	};
+
+	// checkIfComplete = () => {
+	// 	//only set complete state to true if all sections of the feedback have data
+	// 	if (!this.props.reduxState.feedbackReducer.feeling || !this.props.reduxState.feedbackReducer.comments || !this.props.reduxState.feedbackReducer.understanding || !this.props.reduxState.feedbackReducer.support) {
+	// 		this.setState({
+	// 			complete: false
+	// 		})
+	// 		console.log('checkcomplete false')
+	// 	}
+	// 	else if (this.props.reduxState.feedbackReducer.feeling && this.props.reduxState.feedbackReducer.comments && this.props.reduxState.feedbackReducer.understanding && this.props.reduxState.feedbackReducer.support) {
+	// 		this.setState({
+	// 			complete: true
+	// 		})
+
+	// 	}
+	// 	console.log('checkIfComplete', this.state.complete)
+	// };//end checkIfComplete
 
 	handleNext = () => {
 		console.log('handleNext');
 		this.props.history.push('/')
-	}//end handleNext
+	};//end handleNext
 
 	render() {
 		return (
@@ -29,16 +67,19 @@ class Comments extends Component {
 					variant="outlined"/>
 				<br></br>
 				<Button
+					onClick={this.handleNext}
 					variant="outlined"
 					color="primary">Next</Button>
+				<ReviewFeedback isFilled={this.state.isFilled}/>
 			</div>
+			
 		)
 	}
 }
 
 const mapReduxStateToProps = (reduxState) => {
 	return {
-		reduxState
+		feedback: reduxState.feedbackReducer
 	}
 }
 

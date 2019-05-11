@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Button, TextField } from '@material-ui/core';
+import ReviewFeedback from '../ReviewFeedback/ReviewFeedback';
 
 class Understanding extends Component {
 
@@ -13,12 +14,12 @@ class Understanding extends Component {
 			alert('Please enter a number between 0 and 5!')
 			event.target.value = null;
 		}
-	}//end handleChange
+	};//end handleChange
 
 	handleNext = () => {
 		console.log('handleNext');
 		this.props.history.push('/supported')
-	}//end handleNext
+	};//end handleNext
 
 	render() {
 		return (
@@ -39,6 +40,7 @@ class Understanding extends Component {
 					onClick={this.handleNext}
 					variant="outlined"
 					color="primary">Next</Button>
+				<ReviewFeedback />
 			</div>
 		)
 	}
