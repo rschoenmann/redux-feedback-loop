@@ -9,6 +9,7 @@ class ReviewFeedback extends Component {
 	submitFeedback = () => {
 		//on submitButton, POST feedback to database and send user to success page
 		console.log('submitbutton handleClick');
+		console.log('this.props.feedback:', this.props.feedback);
 		axios.post('/feedback', this.props.feedback)
 		.then(response => {
 			console.log('back from POST with response:', response)
