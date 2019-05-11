@@ -15,7 +15,10 @@ class Understanding extends Component {
 		}
 	}//end handleChange
 
-
+	handleNext = () => {
+		console.log('handleNext');
+		this.props.history.push('/supported')
+	}//end handleNext
 
 	render() {
 		return (
@@ -33,6 +36,7 @@ class Understanding extends Component {
 					variant="outlined"/>
 				<br></br>
 				<Button
+					onClick={this.handleNext}
 					variant="outlined"
 					color="primary">Next</Button>
 			</div>

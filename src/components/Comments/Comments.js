@@ -10,7 +10,10 @@ class Comments extends Component {
 		this.props.dispatch({ type: 'ADD_COMMENTS', payload: event.target.value, name: 'comments' });
 	}//end handleChange
 
-
+	handleNext = () => {
+		console.log('handleNext');
+		this.props.history.push('/')
+	}//end handleNext
 
 	render() {
 		return (

@@ -10,7 +10,7 @@ import {Provider} from 'react-redux';
 import logger from 'redux-logger';
 
 const feedback = {
-			feelings: 0,
+			feeling: 0,
 			understanding: 0,
 			supported: 0,
 			comments: 0
@@ -20,10 +20,10 @@ const feedback = {
 const feedbackReducer = (state = feedback, action) => {
 	// switch on action.type, spread feedback state and set appropriate key to action.payload
 	switch (action.type) {
-		case 'ADD_FEELINGS':
+		case 'ADD_FEELING':
 			return {
 				...state,
-				feelings: action.payload};
+				feeling: action.payload};
 		case 'ADD_UNDERSTANDING':
 			return {
 				...state,

@@ -15,7 +15,15 @@ class Supported extends Component {
 		}
 	}//end handleChange
 
+	handleNext = () => {
+		console.log('handleNext');
+		this.props.history.push('/comments')
+	}//end handleNext
 
+	handleBack = () => {
+		console.log('handleBack');
+		this.props.history.push('/supported')
+	}
 
 	render() {
 		return (
@@ -33,6 +41,11 @@ class Supported extends Component {
 					variant="outlined"/>
 				<br></br>
 				<Button
+					onClick={this.handleBack}
+					variant="outlined"
+					color="primary">Back</Button>
+				<Button
+					onClick={this.handleNext}
 					variant="outlined"
 					color="primary">Next</Button>
 			</div>
