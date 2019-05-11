@@ -22,7 +22,7 @@ const feedbackReducer = (state = feedback, action) => {
 		case 'ADD_FEELINGS':
 			return {
 				...state,
-				[action.name]: action.payload
+				feelings: action.payload
 			}
 		default:
 			return state;

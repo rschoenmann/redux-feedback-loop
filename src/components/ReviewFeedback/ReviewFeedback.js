@@ -7,7 +7,7 @@ class ReviewFeedback extends Component {
 		return(
 			<div>
 				<h2>Review Your Feedback</h2>
-				<p>Feelings:</p>
+				<p>Feelings: {this.props.feedback.feelings}</p>
 				<p>Understanding:</p>
 				<p>Support:</p>
 				<p>Comments:</p>
@@ -19,7 +19,7 @@ class ReviewFeedback extends Component {
 
 const mapReduxStateToProps = (reduxState) => {
 	return {
-		reduxState
+		feedback: reduxState.feedbackReducer
 	}
 }
 
