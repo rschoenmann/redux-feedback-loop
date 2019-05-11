@@ -6,17 +6,14 @@ import ReviewFeedback from '../ReviewFeedback/ReviewFeedback';
 class Feeling extends Component {
 
 	handleChange = (event) => {
-		// // next button is disabled unless there is something in the input field
-		// this.setState({
-		// 	value: event.target.value
-		// })
 		console.log('event.target.value', event.target.value);
 		if(event.target.value >= 1 && event.target.value <= 5){
-			// if a 0 above is entered, send feelings data to feedbackReducer
+			// if 1-5 is entered, send feelings data to feedbackReducer
 			this.props.dispatch({ type: 'ADD_FEELING', payload: event.target.value, name: 'feeling' });
 		} else {
-			console.log('under 0');
-			alert('Please enter a number between 0 and 5!')
+			console.log('under 1');
+			//otherwise alert user that they need to submit a number between 1 and 5 and clear the input
+			alert('Please enter a number between 1 and 5!')
 			event.target.value = null;
 		}
 	};//end handleRatingChange

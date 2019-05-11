@@ -6,7 +6,9 @@ import {withRouter} from 'react-router';
 class ReviewFeedback extends Component {
 
 	submitFeedback = () => {
+		//on submitButton, POST feedback to database and send user to success page
 		console.log('submitbutton handleClick');
+		this.props.history.push('/success')
 	};//end submitFeedback
 
 	render(){
@@ -14,9 +16,9 @@ class ReviewFeedback extends Component {
 		let submitButton;
 		//since I know my if/else statements in the components make users enter a number from 1-5 and
 		//initial state in index.js is set to 0, should register as true as long as they're not = 0
-		if (this.props.feedback.feeling != 0
-			&& this.props.feedback.understanding != 0
-			&& this.props.feedback.support !=0
+		if (this.props.feedback.feeling !== 0
+			&& this.props.feedback.understanding !== 0
+			&& this.props.feedback.support !==0
 			&& this.props.feedback.comments !== ''){
 				console.log('reviewfeedback button can submit');
 				submitButton = <Button variant="contained" color="primary"
@@ -26,7 +28,7 @@ class ReviewFeedback extends Component {
 				submitButton = <Tooltip title="Please make sure all sections are complete before submitting!" placement="bottom">
 							<span><Button variant="contained" color="primary"
 							disabled >Incomplete</Button></span>
-					</Tooltip>
+							</Tooltip>
 			}//end if/else statement
 
 

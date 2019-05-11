@@ -11,12 +11,13 @@ class Comments extends Component {
 
 	handleChange = (event) => {
 		//no real validation on comments handleChange, since it's an open text input and not a specific number requirement
-		//will just make sure something is entered onClick of 'submit feedback' button
+		//will validate that something was entered onClick of 'submit feedback' button though
 		this.props.dispatch({ type: 'ADD_COMMENTS', payload: event.target.value, name: 'comments' });
 	};//end handleChange
 
 	handleNext = () => {
 		console.log('handleNext');
+		//allow user to cycle back through feedback sections again if they hit next button
 		this.props.history.push('/')
 	};//end handleNext
 

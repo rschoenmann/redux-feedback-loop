@@ -7,11 +7,11 @@ class Understanding extends Component {
 
 	handleChange = (event) => {
 		if (event.target.value >= 1 && event.target.value <= 5) {
-			// if a 0 above is entered, send understanding data to feedbackReducer
+			// if a 1-5 is entered, send understanding data to feedbackReducer
 			this.props.dispatch({ type: 'ADD_UNDERSTANDING', payload: event.target.value, name: 'understanding'});
 		} else {
-			console.log('under 0');
-			alert('Please enter a number between 0 and 5!')
+			console.log('under 1');
+			alert('Please enter a number between 1 and 5!')
 			event.target.value = null;
 		}
 	};//end handleChange
