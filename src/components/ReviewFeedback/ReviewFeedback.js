@@ -7,10 +7,10 @@ class ReviewFeedback extends Component {
 		return(
 			<div>
 				<h2>Review Your Feedback</h2>
-				<p>Feelings: {this.props.feedback.feelings}</p>
-				<p>Understanding: {this.props.feedback.understanding}</p>
-				<p>Support: {this.props.feedback.support}</p>
-				<p>Comments: {this.props.feedback.support}</p>
+				<p>I'm feeling: {this.props.feedback.feelings}</p>
+				<p>I'm understanding: {this.props.feedback.understanding}</p>
+				<p>I feel supported: {this.props.feedback.supported}</p>
+				<p>Comments: {this.props.feedback.comments}</p>
 				<Button variant="contained" color="primary">Submit Feedback</Button>
 			</div>
 		)
