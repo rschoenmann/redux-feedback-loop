@@ -8,9 +8,9 @@ class ReviewFeedback extends Component {
 			<div>
 				<h2>Review Your Feedback</h2>
 				<p>Feelings: {this.props.feedback.feelings}</p>
-				<p>Understanding:</p>
-				<p>Support:</p>
-				<p>Comments:</p>
+				<p>Understanding: {this.props.feedback.understanding}</p>
+				<p>Support: {this.props.feedback.support}</p>
+				<p>Comments: {this.props.feedback.support}</p>
 				<Button variant="contained" color="primary">Submit Feedback</Button>
 			</div>
 		)
@@ -19,6 +19,7 @@ class ReviewFeedback extends Component {
 
 const mapReduxStateToProps = (reduxState) => {
 	return {
+		//feedbackReducer is now this.props.feedback
 		feedback: reduxState.feedbackReducer
 	}
 }

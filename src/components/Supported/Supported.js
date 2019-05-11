@@ -5,7 +5,14 @@ import { Button, TextField } from '@material-ui/core';
 class Supported extends Component {
 
 	handleChange = (event) => {
-		this.props.dispatch({ type: 'ADD_SUPPORTED', payload: event.target.value, name: 'supported' });
+		if (event.target.value >= 0 && event.target.value <= 5) {
+			// if a 0 above is entered, send supported data to feedbackReducer
+			this.props.dispatch({ type: 'ADD_SUPPORTED', payload: event.target.value, name: 'supported' });
+		} else {
+			console.log('under 0');
+			alert('Please enter a number between 0 and 5!')
+			event.target.value = null;
+		}
 	}//end handleChange
 
 
@@ -23,8 +30,7 @@ class Supported extends Component {
 						shrink: true,
 					}}
 					margin="normal"
-					variant="outlined"
-				/>
+					variant="outlined"/>
 				<br></br>
 				<Button
 					variant="outlined"

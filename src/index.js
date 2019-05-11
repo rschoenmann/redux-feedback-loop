@@ -18,12 +18,24 @@ const feedback = {
 
 
 const feedbackReducer = (state = feedback, action) => {
+	// switch on action.type, spread feedback state and set appropriate key to action.payload
 	switch (action.type) {
 		case 'ADD_FEELINGS':
 			return {
 				...state,
-				feelings: action.payload
-			}
+				feelings: action.payload};
+		case 'ADD_UNDERSTANDING':
+			return {
+				...state,
+				understanding: action.payload};
+		case 'ADD_SUPPORTED':
+			return {
+				...state,
+				supported: action.payload};
+		case 'ADD_COMMENTS':
+			return {
+				...state,
+				comments: action.payload};
 		default:
 			return state;
 	}
