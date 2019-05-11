@@ -26,7 +26,7 @@ class ReviewFeedback extends Component {
 				</ul>
 				{/* <Tooltip title="Please make sure all sections are complete before submitting!" placement="bottom"> */}
 					<Button variant="contained" color="primary"
-					onClick={this.submitFeedback} disabled={!this.props.complete}>Submit Feedback</Button>
+					onClick={this.submitFeedback} disabled={!this.props.isFilled}>Submit Feedback</Button>
 				{/* </Tooltip> */}
 				
 			</div>

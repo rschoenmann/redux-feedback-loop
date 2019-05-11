@@ -17,6 +17,7 @@ class Comments extends Component {
 	};//end handleChange
 
 	checkIfComplete = () => {
+		//only set isFilled to true if all sections of feedback contain data
 		if (!this.props.feedback.comments || !this.props.feedback.feeling || !this.props.feedback.understanding || !this.props.feedback.supported) {
 			this.setState({
 				isFilled: false
