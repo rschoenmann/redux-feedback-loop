@@ -2,13 +2,20 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {Button, Tooltip} from '@material-ui/core';
 import {withRouter} from 'react-router';
+import axios from 'axios';
 
 class ReviewFeedback extends Component {
 
 	submitFeedback = () => {
 		//on submitButton, POST feedback to database and send user to success page
 		console.log('submitbutton handleClick');
-		this.props.history.push('/success')
+		axios.post('/feedback', this.props.feedback)
+		.then(response => {
+			console.log('back from POST with response:', response)
+			this.props.history.push('/success');
+		}).catch(error => {
+			console.log('error in POST:', error);
+		})//end POST
 	};//end submitFeedback
 
 	render(){
