@@ -39,7 +39,7 @@ class Understanding extends Component {
 				<Button
 					onClick={this.handleNext}
 					variant="outlined"
-					color="primary">Next</Button>
+					color="primary">Next Section</Button>
 				<ReviewFeedback />
 			</div>
 		)

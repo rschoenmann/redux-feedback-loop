@@ -43,7 +43,7 @@ class Feeling extends Component {
 							onClick={this.handleNext}
 							// 'submit feedback' button should be conditionally disabled, not next buttons. disabled={!this.state.value}
 							variant="outlined" 
-							color="primary">Next</Button>
+							color="primary">Next Section</Button>
 					</form>
 				<ReviewFeedback />
 			</div>

@@ -37,7 +37,7 @@ class Comments extends Component {
 				<Button
 					onClick={this.handleNext}
 					variant="outlined"
-					color="primary">Next</Button>
+					color="primary">Back to First Section</Button>
 				<ReviewFeedback />
 			</div>
 			

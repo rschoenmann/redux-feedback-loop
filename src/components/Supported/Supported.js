@@ -21,11 +21,6 @@ class Supported extends Component {
 		this.props.history.push('/comments')
 	};//end handleNext
 
-	handleBack = () => {
-		console.log('handleBack');
-		this.props.history.push('/supported')
-	};
-
 	render() {
 		return (
 			<div>
@@ -44,7 +39,7 @@ class Supported extends Component {
 				<Button
 					onClick={this.handleNext}
 					variant="outlined"
-					color="primary">Next</Button>
+					color="primary">Next Section</Button>
 				<ReviewFeedback />
 			</div>
 		)

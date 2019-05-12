@@ -36,6 +36,9 @@ const feedbackReducer = (state = feedback, action) => {
 			return {
 				...state,
 				comments: action.payload};
+		case 'START_OVER':
+			//called in Success component, if user wants to start over, we want to clear our feedback object
+			return {};
 		default:
 			return state;
 	}
