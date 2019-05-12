@@ -10,6 +10,7 @@ import Understanding from '../Understanding/Understanding';
 import Supported from '../Supported/Supported';
 import Comments from '../Comments/Comments';
 import Success from '../Success/Success';
+import Admin from '../Admin/Admin';
 
 class App extends Component {
   render() {
@@ -25,6 +26,7 @@ class App extends Component {
             <Route exact path='/supported' component={Supported} />
             <Route exact path='/comments' component={Comments} />
             <Route exact path='/success' component={Success} />
+            <Route exact path='/admin' component={Admin} />
             <br/>
         </Router>
       </div>

@@ -2,6 +2,18 @@ const express = require('express');
 const router = express.Router();
 const pool = require('../modules/pool');
 
+//GET
+router.get('/', (req, res) => {
+	console.log('triggered GET');
+	pool.query(`SELECT * FROM "feedback" ORDER BY "date" DESC, "id" DESC;`)
+	.then((result) => {
+		res.send(result.rows);
+	}).catch((error) => {
+		console.log('error in GET:', error);
+		res.sendStatus(500)
+	});
+});//end GET
+
 //POST
 router.post('/', (req, res) => {
 	console.log('req.body:', req.body);
