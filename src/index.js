@@ -16,6 +16,8 @@ const feedback = {
 			comments: ''
 		}	
 
+const adminFeedback = [];
+
 
 const feedbackReducer = (state = feedback, action) => {
 	// switch on action.type, spread feedback state and set appropriate key to action.payload
@@ -42,11 +44,21 @@ const feedbackReducer = (state = feedback, action) => {
 		default:
 			return state;
 	}
-}
+}//end feedbackReducer
+
+const getFeedbackReducer = (state=adminFeedback, action) => {
+	if(action.type === 'GET_FEEDBACK'){
+		//if action.type came from Admin dispatch, return response.data from GET request
+		return action.payload;
+	} else {
+		return state;
+	}//end if/else statement
+}//end getFeedbackReducer
 
 const storeInstance = createStore(
 	combineReducers({
-		feedbackReducer
+		feedbackReducer,
+		getFeedbackReducer
 	}),
 	applyMiddleware(logger)
 );
