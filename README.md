@@ -1,93 +1,63 @@
 # Redux Feedback Loop
 
-
->Do not clone this repository. Instead, download the zip, extract the contents, create a new GitHub repository and `git init`, `git add .`, `git commit -m "initial commit - base project"` and add your remote. Please do this before you leave for the day.
-
-**PLEASE COMMENT YOUR CODE.**
-
-"And my last reminder of the day, which is my last reminder of every day, is...?" - Luke
-
- For this assignment, you will be creating a feedback form modeled after Prime's system. Feedback will be collected over 4 views, and when all steps are complete, your app will save the feedback in the database. In a separate part of the page, display the current feedback values and a submit button. 
-
-### SETUP
-
-Create your database and tables using the provided `data.sql` file. Start the server.
-
-```
-npm install
-npm run server
-```
-
-Now that the server is running, open a new terminal tab with `cmd + t` and start the react client app.
-
-```
-npm run client
-```
-
-### ADD NEW FEEDBACK
-
-> NOTE: As a baseline requirement, you must use Redux to store your data across views.
-
-Create a multi-part form that allows users to leave feedback for today. 
-There will be 4 views for the form parts.
-The parts:
-- How are you feeling today?
-![feeling](wireframes/feeling.png)
-- How well are you understanding the content?
-![understanding](wireframes/understanding.png)
-- How well are you being supported?
-![support](wireframes/supported.png)
-- Any comments you want to leave?
-![comments](wireframes/comments.png)
-
-While there is no nav bar, each part of the form should be at its own route. Clicking next should move the user to the appropriate step in the process as well as update the `Review` Component.
+Redux Feedback Loop is a React-based application modeled after Prime's daily feedback form. Over 4 views, users enter their feedback about how they're feeling, how well they understood today's material, and how supported they feel on a scale from 1-5, as well as any additional comments they want to add. The current feedback is displayed in a separate part of the page, and once all 4 pieces of feedback have been entered, the submit button is enabled and users are able to submit their feedback to the database. They are then brought to a success page that thanks them for their feedback, with an option to leave another feedback. 
 
 
-## THE REVIEW COMPONENT
+## Built With
+* React
+* React Redux
+* React Router
+* Node.js
+* Express
+* Postico
+* PostgreSQL
+* Material-UI
 
-In addition to the multi-step form, the app needs to display the results of each step clearly and at all times. HINT: This will be your current redux values displayed on the DOM. 
+## Getting Started
 
-The simplest way could be another component on the DOM which shows the results of the current survey and a Submit button.
+### Prerequisites
+* Node.js
+* nodemon
+* PostgreSQL
 
-### Incomplete, Submit button is disabled:
+### Installing
+Steps to get the development environment running.
 
-![comments](wireframes/comments.png)
+1. Fork and clone repository.
+2. Make a PostgreSQL database called `prime_feedback`. Create database table via instructions in `data.sql` file in repository. 
+3. Once in the project folder, inside the terminal run `npm install` and then `npm run server`.
+4. Open a new terminal window and start the application by running `npm run client`.
 
-### Survey complete, Submit button is active:
+## Screenshots
 
-![comments](wireframes/review.png)
+Main view of the application:
+![main](screenshots/main-view.png)
 
-## SUBMIT THE FEEDBACK
+Once all portions of the feedback are completed, the submit button is enabled:
+![submit-button](screenshots/submit-button.png)
 
-The `Review` portion needs a submit button which will be clicked on to actually submit the completed feedback to the server. **This submit button should only be active when all of the survey steps are complete.**
+After submitting: 
+![thank-you](screenshots/thank-you.png)
 
-When the submit button is clicked, save the submission in the database. The user should see a submission success page.
+### Completed Features
+- [x] Allow users to add 1-5 feedback for Feeling, Understanding, and Support (only allow users to enter a number from 1-5)
+- [x] Application cycles through components via Hash Router
+- [x] Allow users to add comments in the Comments section
+- [x] Separate Review component that displays current feedback information
+- [x] Users are only allowed to submit feedback to database once all fields are completed and valid
+- [x] Successful submission brings user to success page and allows them to start over if they want, clearing feedback held in Redux
 
-![understanding](wireframes/page-five.png)
+### Next Steps
+- [] Display all existing feedback in an Admin section
+- [] Allow feedback to be deleted or flagged for further review in Admin section
+- [] Deploy app to Heroku
 
+## Authors
+* Rachel Schoenmann
 
-
-## STRETCH GOALS
-
-> NOTE: These stretch goals are intended to be completed in order.
-
-### ADMIN SECTION
-
-Display all of the existing feedback at the route `/admin`. The most recently added feedback should appear at the top of the list. Allow the user to delete existing feedback. Prompt the user to confirm prior to deleting the feedback from the database.
-
-![display feedback](wireframes/admin.png)
-
-### OTHER FEATURES
-
-- Update this README.md to describe the project in your own words
-- Improve the styling of the app using Material-UI theme, cards, snackbars, buttons, nav bar, and icons, and anything else you'd like.
-- Add the ability to flag an existing feedback entry for further review on the /admin view
-- Deploy your project to Heroku -- you'll need to read the special instructions for building and deploying with these apps! 
-
-
-Installed: 
-npm install
-react-redux
-logger
-router
-material ui
+## Acknowledgements
+* Dane Smith
+* Dev Jana
+* Ally Boyd
+* Prime Digital Academy
+* Baconian Cohort
