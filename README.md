@@ -48,9 +48,9 @@ After submitting:
 - [x] Successful submission brings user to success page and allows them to start over if they want, clearing feedback held in Redux
 
 ### Next Steps
-- [] Display all existing feedback in an Admin section
-- [] Allow feedback to be deleted or flagged for further review in Admin section
-- [] Deploy app to Heroku
+- [ ] Display all existing feedback in an Admin section
+- [ ] Allow feedback to be deleted or flagged for further review in Admin section
+- [ ] Deploy app to Heroku
 
 ## Authors
 * Rachel Schoenmann
